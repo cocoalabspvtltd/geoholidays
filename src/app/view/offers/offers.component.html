@@ -1,0 +1,62 @@
+
+
+@if(loading){
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+     <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+         <span class="sr-only">Loading...</span>
+     </div>
+ </div>
+ <!-- Spinner End -->
+ }
+ @else {
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+          <div class="container text-center py-5" style="max-width: 900px;">
+              <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Offers</h3>
+              <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                  <li class="breadcrumb-item"><a  class="text-white">Home</a></li>                 
+                  <li class="breadcrumb-item active text-secondary">Offers</li>
+              </ol>    
+          </div>
+      </div>
+      <!-- Header End -->
+
+     <!-- Contact Start -->
+     <div class="container-fluid contact overflow-hidden pb-5">
+      <div class="container py-5">
+          <div class="office">
+              <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="sub-style">
+                      <h5 class="sub-title text-primary px-3">Offers</h5>
+                  </div>                
+                  
+              </div>
+              <p> Enjoy travelling at the best prices with Geo Holidays offers - Today, travel and tourism industry is one of the fastest growing sectors globally. While travelling is becoming a trend of this generation, more and more travel agencies are opening their doors to help plan your vacation. Choosing the best discount offers among so many available online is one of the most crucial steps of planning a holiday. Geo Holidays enables its users to plan their trip online, compare prices of various airlines/hotels and get the best deals. A number of Geo Holidays offers ensure that you get the best deals within your budget
+              </p>
+              <div class="row g-4 justify-content-center">
+                @for(item of data; track data.id)
+                {
+                  <div class="col-md-6 col-lg-4 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="office-item p-4">
+                          <div class="office-img mb-4">
+                              <img src="{{baseurl}}{{item.image}}" class="img-fluid w-100 rounded" alt="">
+
+                             
+                          </div>
+                          <div class="office-content d-flex flex-column">                               
+                              <h4 class="mb-2">{{item.title}}</h4>   
+                              <span class="price">{{item.details}}</span>                               
+                                                      </div>
+                      </div>
+                  </div>
+                }
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Contact End -->
+ }
+
+

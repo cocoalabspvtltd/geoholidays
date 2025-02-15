@@ -1,1 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+#p1{
+    color:rgb(54, 54, 54);
+    text-align: justify;
+    font-size:14px;
+   }
+   .services .icon span {
+    font-size: 60px;
+    color: #fff !important;
+   
+}
+.services.services-1 .icon {
+    width: 115px;
+    height: 80px;
+    margin-left: -35px;
+    margin-bottom: 10px;
+    background: #b1d03d;
+    position: relative;
+}
+.project-wrap .img .price{
+   background: #b1d03d; 
+}
+.project-wrap .img .price:before {
+    width: 0;
+    right: -8px;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 0 8px;
+    border-color: transparent transparent transparent #b1d03d;
+}
+.project-wrap .img .price:after {
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 8px 8px;
+    border-color: transparent transparent transparent #b1d03d;
+}
+.overlay {
+    width: 100%;
+    overflow: hidden;
+    height:320px !important;
+    background-color: rgba(119, 118, 118, 0.438);
+  
+ }p{
+    font-size: 14px !important;
+ }
+ h2{
+    color:#b1d03d ;
+    font-weight: bold;
+}
+.btn.btn-primary {
+    background: #2a6931 !important;
+    border: 1px solid #2a6931 !important;
+    color: #fff !important;
+}
+.contact-section .box .icon {
+    width: 100px;
+    height: 100px;
+    background: #b1d03d;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+}
+.contact-section .box h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a6931;
+}
+.block-23 ul li .icon {
+    width: 40px;
+    font-size: 18px;
+    padding-top: 2px;
+    color:  #2a6931 !important;
+}
+@media (max-width: 991.98px){
+   #h1{
+    margin-top: 20%;
+   } 
+} */p{
+    text-align:justify;
+    font-family: 'Playfair+Display';
+    font-size: 16px !important;
+    color:#294D39;
+}
+body{
+    font-family: 'Playfair+Display';
+}
+h4{
+    font-size: 18px !important;
+    font-weight: 500;
+    }
+@media (max-width: 768px) {
+    .carousel-header {
+        height: 400px !important;
+    }
+    .carousel {
+        height: 400px !important;
+      
+    }
+    .carousel-inner h4{
+        margin-top:-220px !important;
+        font-size: 15px ;
+        
+    }
+    .carousel-inner h1{
+        font-size: 25px ;}
+        .carousel-header .carousel-control-next .carousel-control-next-icon {
+           
+            display: none;
+        }
+        .carousel-header .carousel-control-prev .carousel-control-prev-icon {
+            
+            display: none;
+        }
+        .py-5 {
+            padding: 15px !important;
+        }
+        .pt-5 {
+            padding: 15px !important;}
+            #img1 {
+                width: 100%;
+                height: 200px !important;
+            }
+            img.img-fluid.w-100.rounded {
+                width: 100%;
+                height: 200px !important;
+            
+            }
+}
+

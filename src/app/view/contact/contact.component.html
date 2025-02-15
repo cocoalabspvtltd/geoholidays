@@ -1,0 +1,126 @@
+
+     <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Contact Us</h3>
+            <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a  class="text-white">Home</a></li>             
+                <li class="breadcrumb-item active text-secondary">Contact</li>
+            </ol>    
+        </div>
+    </div>
+    <!-- Header End -->
+  
+    <!-- Contact Start -->
+    <div class="container-fluid contact overflow-hidden py-5">
+        <div class="container py-5">
+            <div class="row g-5 mb-5">
+              <div class="office pt-5">
+                  <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                      <div class="sub-style">
+                          <h5 class="sub-title text-primary px-3">Offices</h5>
+                      </div>
+                      <h1 class="display-5 mb-4">Our Offices</h1>
+                  </div>
+
+                  <div class="row g-4 justify-content-center">
+                    @for (item of aboutData; track $index) {
+                      <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="office-item p-4">
+                              <div class="office-img mb-4">
+                                <i class='fas fa-building' style='font-size:24px;color:#000'></i>
+                              </div>
+                              <div class="office-content d-flex flex-column">
+                                                                   <a class="text-secondary fs-5 mb-2">{{item.phone_number}}</a>
+                                  <a  class="text-muted fs-5 mb-2" style='color:#000 !important;font-size: 16px !important;'>{{item.email}}</a>
+                                  <p class="mb-0">{{item.address}}</p>
+                              </div>
+                          </div>
+                      </div>
+                    }
+                     
+                  </div>
+              </div>
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                  <div class="rounded h-100">
+                      <!-- <iframe class="rounded w-100" 
+                      style="height: 100%;" src="{{aboutData[0].location}}" 
+                      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                      <!-- <iframe 
+                      class="rounded w-100" 
+                     
+                      [src]="aboutData[0]?.location" 
+                      loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade">
+                  </iframe> -->
+                      <iframe class="rounded w-100" 
+                      style="height: 100%;" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.2207977883595!2d77.63453087507732!3d13.021606787298337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAxJzE3LjgiTiA3N8KwMzgnMTMuNiJF!5e0!3m2!1sen!2sin!4v1723541129839!5m2!1sen!2sin"
+></iframe>
+                  </div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary pe-3">Let’s Connect</h5>
+                    </div>
+                    <h1 class="display-5 mb-4"></h1>
+                    <form [formGroup]="contactForm" (ngSubmit)="contact()">
+                        <div class="row g-4">
+                            <div class="col-lg-12 col-xl-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" formControlName="name">
+                                    <label for="name">Your Name</label>
+                                    @if(this.contactForm.get('name')?.hasError('required')&&this.contactForm.get('name')?.touched){
+                                        <div class="form-error" > Name is Required</div>
+                                                                     
+                                      } @else if(this.contactForm.get('name')?.hasError('pattern')){
+                                        <div class="form-error" >Invalid  Name</div>
+                                      }  
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-xl-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" formControlName="email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" formControlName="subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+                                    <label for="subject">Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px" formControlName="message"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3">Send Message</button>
+                            </div>
+                            @if (this.msg) {
+                                <div  class="alert alert-success" role="alert">
+                                   <p >{{this.msg}}</p>
+                                 </div>
+                               }
+                               @if (this.errorMsg){
+                                 <div class="alert alert-danger" role="alert">
+                                   <p >{{this.errorMsg}}</p>
+                                 </div>
+                               }
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Contact End -->
+      
+    

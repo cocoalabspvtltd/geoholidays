@@ -1,0 +1,148 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+.form-floating label{
+    font-size: 14px !important;
+    padding: 10px;
+}
+
+.card1 {
+    border: 0;
+    border-radius: 0.1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.card1 {
+    background-color:#b1d03d  !important;
+    padding: 10px;
+}
+
+.form-error{
+    color:red;
+    font-size: 14px;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+    background: #e5e5e5;
+  box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+}
+.input {
+  position: absolute;
+  opacity: 0;
+}
+.label {
+  width: 100%;
+  padding: 20px 30px;
+  background: #e5e5e5;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  color: #7f7f7f;
+  transition: background 0.1s, color 0.1s;
+}
+.label:hover {
+  background: #d8d8d8;
+}
+.label:active {
+  background: #ccc;
+}
+.input:focus + .label {
+  z-index: 1;
+}
+.input:checked + .label {
+  background: #fff;
+  color: #000;
+}
+@media (min-width: 600px) {
+  .label {
+    width: auto;
+  }
+}
+.panel {
+  display: none;
+  padding: 20px 30px 30px;
+  background: #fff;
+}
+@media (min-width: 600px) {
+  .panel {
+    order: 99;
+  }
+}
+.input:checked + .label + .panel {
+  display: block;
+}
+
+
+
+#img{
+    width:60% !important;
+    height:40% !important;
+    margin: auto;
+    display: block;
+
+}
+.card{
+    border:none;
+}
+
+
+
+
+
+
+
+
+/* 
+p{
+    color:#000 !important;
+}
+option{
+    font-size: 14px;
+}
+.form-control {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 15px;
+    border-radius: 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.form-error{
+    color:red;
+    font-size: 12px;
+}
+h5{
+    color:#000;
+    font-weight: 600;
+}
+#d1{
+    text-align: left;
+    color: #000;
+    font-size: 14px;
+}
+.select option{
+    font-size: 12px;
+}
+.form-control {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+    border-radius: 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+p{
+    font-size: 14px !important;
+}
+.textarea {
+    font-size: 14px;color:#000;
+ } */

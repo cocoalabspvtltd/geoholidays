@@ -1,0 +1,122 @@
+
+   
+
+
+  
+    @if(loading){
+       <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+ </div>
+ <!-- Spinner End -->
+    }
+    @else {
+           <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px;">
+          <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Book Now</h3>
+            
+      </div>
+  </div>
+  <div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container py-5">                        
+            <div class="row g-4 justify-content-center">              
+              <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img src="assets/img/contact-img.png" alt="" width="100%">
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="feature-item p-4 "> 
+                    <div class="card">
+                      <h6 style="text-align: center;">Call Us :   +91 90088 41010
+                        <span>
+                                            Or &nbsp;  <a  style="color:#067a29;font-weight: bold;" target="_blank"href=" https://wa.me/9535100420?text=text=Hi,%20I'm%20inquiring%20about%20the%20services%20">WhatsApp</a>
+                        <br><br> Fill in Your Details Below to Send Us an Enquiry</span></h6>
+                       </div>
+                  
+                   <form   [formGroup]="contactForm" (ngSubmit)="enquiry()">
+                    <div class="row g-4">
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="form-floating">
+                                <select id="mySelect" class="form-control" name="service" formControlName="service">
+                                    <option value="" selected>Select Service</option>
+                                    <option value="Car Rental">Car Rental</option>
+                                    <option value="Insurance">Insurance</option>
+                                    <option value="Visa Service">Visa Service</option>
+                                    <option value="Passport">Passport</option>
+                                    <option value="Flight">Flight</option>
+                                    <option value="Train">Train</option>
+                                    <option value="Ayurvedic Package">Ayurvedic Package</option>
+                                </select>
+                               
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"  formControlName="name">
+                                <label for="name">Your Name</label>
+                                @if(this.contactForm.get('name')?.hasError('required')&&this.contactForm.get('name')?.touched){
+                                  <div class="form-error" >Name is Required</div>
+                                                               
+                                }
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"  formControlName="email">
+                                <label for="email">Your Email</label>                              
+                              @if(this.contactForm.get('email')?.hasError('required')&&this.contactForm.get('email')?.touched){
+                                <div class="form-error" >Email is Required</div>
+                                                            
+                              } @else if(this.contactForm.get('email')?.hasError('pattern')){
+                                <div class="form-error" >Invalid Email</div>
+                              } 
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone"  formControlName="phone">
+                                <label for="phone">Your Phone</label>
+                                @if(this.contactForm.get('phone')?.hasError('required')&&this.contactForm.get('phone')?.touched){
+                                  <div class="form-error" >Phone Number is Required</div>
+                                                               
+                                } @else if(this.contactForm.get('phone')?.hasError('pattern')){
+                                  <div class="form-error" >Invalid Phone Number</div>
+                                } 
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 60px" formControlName="message"></textarea>
+                                <label for="message">Message</label>
+                                @if(this.contactForm.get('message')?.hasError('required')&&this.contactForm.get('message')?.touched){
+                                  <div class="form-error" >Message is Required</div>
+                                                               
+                                }
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                    @if (this.msg) {
+                      <div  class="alert alert-success" role="alert">
+                         <p >{{this.msg}}</p>
+                       </div>
+                     }
+                     @if (this.errorMsg){
+                       <div class="alert alert-danger" role="alert">
+                         <p >{{this.errorMsg}}</p>
+                       </div>
+                     }
+                </form>
+                
+                  </div>
+                  </div>
+              </div>
+        
+    </div>
+  </div>
+      
+    }

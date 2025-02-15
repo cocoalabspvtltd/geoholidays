@@ -1,0 +1,14 @@
+img{
+  height: 250px;
+}
+button{
+  margin-top: 10px;;
+  width:150px;
+  padding:10px;
+  margin: auto;
+  display: block;
+  border: none;
+}
+.office-item{
+min-height:400px;
+}

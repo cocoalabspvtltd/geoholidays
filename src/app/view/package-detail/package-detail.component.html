@@ -1,0 +1,197 @@
+@if(loading){
+  <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+ </div>
+ <!-- Spinner End -->
+ }
+@else {
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px;">
+          <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Packages Details</h3>
+          <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+              <li class="breadcrumb-item"><a  class="text-white">Home</a></li>                 
+              <li class="breadcrumb-item active text-secondary">Packages Details</li>
+          </ol>    
+      </div>
+  </div>
+  <!-- Header End -->
+        <!-- Contact Start -->
+        <div class="container-fluid contact overflow-hidden pb-5">
+          <div class="container py-5">
+              <div class="office pt-5">
+                    <div class="row g-4 justify-content-center">
+                      <div class="col-md-12 col-lg-12 col-xl-12 wow fadeInUp" data-wow-delay="0.1s">
+                        @for(item of data; track data.id)
+                        {
+                        <div class="card">
+                          <div class="row">
+                            <div class="col-md-4 col-lg-4 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                              <div class="office-img mb-4">
+                                <img src="{{baseurl}}/{{item.image}}" class="img-fluid w-100 rounded" id="img" alt="">
+                            </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                              <ul class="nav nav-tabs nav-tabs-neutral justify-content-center" role="tablist" data-background-color="">
+                                <h2>{{item.title}}</h2>
+                            </ul>
+                            <div class="card-body">
+                              <!-- Tab panes --> 
+                              <h5>Price Starting from {{item.package_rate}}*</h5> 
+                              <ul>
+                                <li style="color:#000">Package Duration  : {{item.day_count}} Days/ {{item.night_count}} Nights</li>
+                              </ul>
+                             
+                             <p [innerHTML]="item.description"></p>
+                            </div>
+                            
+                            </div>
+                          </div>
+                          
+                             
+
+                         
+                        </div>
+                        }
+                      </div>
+                     
+                  </div>
+                 
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="row">
+                    <div class="tabs">
+                      <input class="input" name="tabs" type="radio" id="tab-1" checked="checked"/>
+                      <label class="label" for="tab-1">Highlights</label>
+                      <div class="panel">
+                        <h1>Highlights</h1>
+                        <p   [innerHTML]="this.highlights"></p>
+                      </div>
+                      <input class="input" name="tabs" type="radio" id="tab-2"/>
+                      <label class="label" for="tab-2">Inclusion</label>
+                      <div class="panel">
+                        <h1>Inclusion</h1>
+                        <p [innerHTML]="inclusion"></p>
+                         </div>
+                      <input class="input" name="tabs" type="radio" id="tab-3"/>
+                      <label class="label" for="tab-3">Exclusions</label>
+                      <div class="panel">
+                        <h1>Exclusions</h1>                               
+                        <p   [innerHTML]="exclusion"></p>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="feature-item p-4 "> 
+                    <div class="card1">
+                    <h6 style="text-align: center;">Call Us :   +91 90088 41010
+                     <span>
+                                         Or &nbsp;  <a  style="color:#067a29;font-weight: bold;" target="_blank"href=" https://wa.me/9535100420?text=text=Hi,%20I'm%20inquiring%20about%20the%20services%20">WhatsApp</a>
+                     <br><br> Fill in Your Details Below to Send Us an Enquiry</span></h6>
+                    </div>
+                  
+                   <form   [formGroup]="contactForm" (ngSubmit)="book_now()">
+                    <div class="row g-4">
+                        
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name"  formControlName="name">
+                                <label for="name">Your Name</label>
+                                @if(this.contactForm.get('name')?.hasError('required')&&this.contactForm.get('name')?.touched){
+                                  <div class="form-error" >Name is Required</div>
+                                                               
+                                }
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"  formControlName="email">
+                                <label for="email">Your Email</label>                              
+                              @if(this.contactForm.get('email')?.hasError('required')&&this.contactForm.get('email')?.touched){
+                                <div class="form-error" >Email is Required</div>
+                                                            
+                              } @else if(this.contactForm.get('email')?.hasError('pattern')){
+                                <div class="form-error" >Invalid Email</div>
+                              } 
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone"  formControlName="phone">
+                                <label for="phone">Your Phone</label>
+                                @if(this.contactForm.get('phone')?.hasError('required')&&this.contactForm.get('phone')?.touched){
+                                  <div class="form-error" >Phone Number is Required</div>
+                                                               
+                                } @else if(this.contactForm.get('phone')?.hasError('pattern')){
+                                  <div class="form-error" >Invalid Phone Number</div>
+                                } 
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" placeholder="Departure City" formControlName="city">
+                            <label for="email">Departure City</label>   
+                            @if(this.contactForm.get('city')?.hasError('required')&&this.contactForm.get('city')?.touched){
+                              <div class="form-error" >City is Required</div>
+                                                           
+                            } 
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6">
+                          <div class="form-floating">
+                            <input  class="form-control" placeholder="Preferred Date" [(ngModel)]="selectedDate" [min]="minDate"  formControlName="date" type="date">
+                            <!-- <span style="color:#000; font-size:10px;">Select Preferred Date</span> -->
+                            <label for="email">Select Preferred Date</label>   
+                            @if(this.contactForm.get('date')?.hasError('required')&&this.contactForm.get('date')?.touched){
+                              <div class="form-error" >Date is Required</div>
+                                                           
+                            }                              
+                          </div>
+                        </div>                        
+                        <div class="col-lg-4 col-xl-4">
+                          <div class="form-floating">
+                            <label for="email">Adults (+12yrs)</label>   
+                            <input type="number" class="form-control" placeholder="Adults (+12yrs)" min="0" formControlName="adult">
+                        </div>
+                        </div>
+                        <div class="col-lg-4 col-xl-4">
+                          <div class="form-floating">
+                            <label for="email">Child (2-12 yrs)</label>   
+                            <input type="number" class="form-control" placeholder="Child (2-12 yrs)" min="0" formControlName="child">
+                        </div>
+                        </div>
+                        <div class="col-lg-4 col-xl-4">
+                          <div class="form-floating">
+                            <label for="email">Infant (0-2 yrs)</label>   
+                            <input type="number" class="form-control" placeholder="Infant (0-2 yrs)" min="0" formControlName="infant">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send</button>
+                        </div>
+                    </div>
+                    @if (this.msg) {
+                      <div  class="alert alert-success" role="alert">
+                         <p >{{this.msg}}</p>
+                       </div>
+                     }
+                     @if (this.errorMsg){
+                       <div class="alert alert-danger" role="alert">
+                         <p >{{this.errorMsg}}</p>
+                       </div>
+                     }
+                </form>
+                
+                  </div>
+                </div>
+              </div>
+              </div>
+          </div>
+
+ }

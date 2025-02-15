@@ -1,0 +1,28 @@
+
+.card {
+    border: 0;
+    border-radius: 0.1875rem;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+    background-color:#b1d03d  !important;
+    padding: 10px;
+}
+
+.form-error{
+    color:red;
+    font-size: 14px;
+}
+ 
+ #mySelect{
+    background-color: #fff !important;
+    opacity: 1;
+    font-size:  15px !important;
+    padding:5px;
+  }

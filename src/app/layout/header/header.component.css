@@ -1,0 +1,17 @@
+.ftco-navbar-light.scrolled .nav-link.active {
+
+    color:#145A32  !important;
+    
+}
+
+/* .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    font-size: 12px !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    color: #1a0606 !important;
+    font-weight: 500;
+    opacity: 1 !important;
+} */
+.active{
+    color:#80f3b2    !important;
+}

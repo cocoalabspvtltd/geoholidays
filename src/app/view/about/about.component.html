@@ -1,0 +1,63 @@
+@if(loading){
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+     <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+         <span class="sr-only">Loading...</span>
+     </div>
+ </div>
+ <!-- Spinner End -->
+ }
+ @else {
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+          <div class="container text-center py-5" style="max-width: 900px;">
+              <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">About Us</h3>
+              <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                  <li class="breadcrumb-item"><a  class="text-white">Home</a></li>                 
+                  <li class="breadcrumb-item active text-secondary">About</li>
+              </ol>    
+          </div>
+      </div>
+      <!-- Header End -->
+
+
+       <!-- About Start -->
+       <div class="container-fluid overflow-hidden py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="bg-light rounded">
+                        <!-- <img src="assets/img/bnr1.png" class="img-fluid w-100" style="margin-bottom: -7px;" alt="Image"> -->
+                        <img [src]="image" class="img-fluid w-100" >
+                    </div>
+                </div>
+                <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                    <h5 class="sub-title pe-3">{{aboutData.sub_title}}</h5>
+                    <h1 class="display-5 mb-4">{{aboutData.title}}</h1>
+                    <p class="mb-4" [innerHTML]="aboutData.description"></p>                  
+                    <div class="row gy-4 align-items-center">                        
+                        
+                            <div class="d-flex flex-wrap">
+                                <div  class="d-flex align-items-center justify-content-center me-4">
+                                    <a href="" class="position-relative wow tada" data-wow-delay=".9s">
+                                        <i class="fa fa-phone-alt text-primary fa-3x"></i>
+                                        <!-- <div class="position-absolute" style="top: 0; left: 25px;">
+                                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                        </div> -->
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <span class="text-primary">Call Now</span>
+                                    <span class="text-secondary fw-bold fs-5" style="letter-spacing: 2px;">{{aboutData.contact_details}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!-- About End -->
+     
+    }

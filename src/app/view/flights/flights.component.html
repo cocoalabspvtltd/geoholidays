@@ -1,0 +1,53 @@
+
+@if(loading){
+  <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+   <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+       <span class="sr-only">Loading...</span>
+   </div>
+</div>
+<!-- Spinner End -->
+}
+@else {
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+          <div class="container text-center py-5" style="max-width: 900px;">
+              <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Flight and Hotel booking</h3>
+              <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                  <li class="breadcrumb-item"><a  class="text-white">Home</a></li>                 
+                  <li class="breadcrumb-item active text-secondary">Flight and Hotel booking</li>
+              </ol>    
+          </div>
+      </div>
+      <!-- Header End -->
+      <!-- Contact Start -->
+      <div class="container-fluid contact overflow-hidden pb-5">
+        <div class="container py-5">
+            <div class="office pt-5">
+                
+                <div class="row g-4 justify-content-center">
+                  
+                    <div class="col-md-12 col-lg-12 col-xl-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="office-item p-4">
+                            <div class="office-img mb-4">
+                                <img src="assets/img/banner-flights&hotels.jpg" class="img-fluid w-100 rounded" alt="">
+                            </div>
+                            <div class="office-content d-flex flex-column">                               
+                                <h4 class="mb-2" style="text-align: center;">{{data.title}}</h4><br>                                  
+                                <p class="mb-0"[innerHTML]="data.details"></p>
+                                <br>
+                                <p style="text-align: center;"><a routerLink="/enquiry" class="btn btn-primary">Enquiry</a>         
+                                  <a  target="_blank"href=" https://wa.me/9535100420?text=Hi,%20I'm%20inquiring%20about%20the%20Flight and Hotel booking%20services%20"><img src="assets/img/WhatsAppButtonGreenLarge.svg" alt=""></a>
+                         </p>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+  }

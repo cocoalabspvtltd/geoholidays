@@ -1,0 +1,75 @@
+   
+
+@if(loading){
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+     <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+         <span class="sr-only">Loading...</span>
+     </div>
+ </div>
+ <!-- Spinner End -->
+ }
+ @else 
+   {
+   
+   <!-- Header Start -->
+     <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px;">
+          <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Blog</h3>
+          <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
+              <li class="breadcrumb-item"><a  class="text-white">Home</a></li>                 
+              <li class="breadcrumb-item active text-secondary">Blog</li>
+          </ol>    
+      </div>
+  </div>
+   <!-- Contact Start -->
+   <div class="container-fluid contact overflow-hidden pb-5">
+    <div class="container py-5">
+        @for(item of data; track data.id) 
+        {
+            <div class="row g-4">
+                <!-- Check if the current item is odd or even -->
+                @if(data.indexOf(item) % 2 === 0)
+                {
+                    <!-- Original order: Image on the left, content on the right -->
+                    <div class="col-md-4 col-lg-4 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="office-img">
+                            <img src="{{baseurl}}/{{item.image}}" class="img-fluid w-100 rounded" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="office-item p-4">
+                            <div class="office-content d-flex flex-column">
+                                <h4 class="mb-2">{{item.title}}</h4>
+                                <p [innerHTML]="item.description"></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @else
+                {
+                    <!-- Reversed order: Content on the left, image on the right -->
+                    <div class="col-md-8 col-lg-8 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="office-item p-4">
+                            <div class="office-content d-flex flex-column">
+                                <h4 class="mb-2">{{item.title}}</h4>
+                                <p [innerHTML]="item.description"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="office-img">
+                            <img src="{{baseurl}}/{{item.image}}" class="img-fluid w-100 rounded" alt="">
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<!-- Contact End -->
+}
